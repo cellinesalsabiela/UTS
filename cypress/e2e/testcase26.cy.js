@@ -1,14 +1,9 @@
 describe('template spec', () => {
-  it('Verify Scroll Up Without Arrow Button adn Scroll Down Functionality', () => {
+  it('passes', () => {
     cy.visit('https://www.automationexercise.com/')
-    // Scroll down
-    cy.scrollTo('bottom');
-    cy.wait(1000); // Wait for the scroll to complete (adjust as needed)
-
-    // Add your assertions or additional test steps here
-
-    // Scroll up
-    cy.scrollTo('top');
-    cy.wait(1000); // Wait for the scroll to complete (adjust as needed)
-  })
+    cy.scrollTo('bottom')
+    cy.get('.single-widget > h2').should('be.visible');
+    cy.scrollTo('top')
+    cy.get('.active > :nth-child(1) > h2').should('be.visible');
+  })
 })
